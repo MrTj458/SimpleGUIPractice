@@ -14,7 +14,7 @@ public class GUIPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JButton changeColorButton;
 	private JTextField textField;
-	private JButton seizureButton;
+	private JButton changePanelButton;
 
 	public GUIPanel(GUIController baseController)
 	{
@@ -22,7 +22,7 @@ public class GUIPanel extends JPanel
 		baseLayout = new SpringLayout();
 		changeColorButton = new JButton("Change Colors!");
 		textField = new JTextField("Call me a name!");
-		seizureButton = new JButton("Seizure Mode");
+		changePanelButton = new JButton("Change panel");
 
 		setupPanel();
 		setupLayout();
@@ -34,7 +34,7 @@ public class GUIPanel extends JPanel
 		this.setLayout(baseLayout);
 		this.add(changeColorButton);
 		this.add(textField);
-		this.add(seizureButton);
+		this.add(changePanelButton);
 	}
 
 	private void setupLayout()
@@ -44,8 +44,8 @@ public class GUIPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, changeColorButton, 155, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, textField, 129, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, textField, 335, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, seizureButton, 161, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, seizureButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, changePanelButton, 161, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, changePanelButton, -10, SpringLayout.SOUTH, this);
 	}
 
 	private void setupListeners()
@@ -67,7 +67,7 @@ public class GUIPanel extends JPanel
 			}
 		});
 
-		seizureButton.addActionListener(new ActionListener()
+		changePanelButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
