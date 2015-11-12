@@ -1,28 +1,28 @@
 package gui.view;
 
 import javax.swing.*;
-
 import gui.controller.GUIController;
-
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class GUIPanel extends JPanel
 {
-	private GUIController baseControlelr;
+	private GUIController baseController;
 	private SpringLayout baseLayout;
 	private JButton changeColorButton;
 	private JTextField textField;
 	private JButton changePanelButton;
+	private GUIPanel2 secondPanel;
 
 	public GUIPanel(GUIController baseController)
 	{
-		this.baseControlelr = baseController;
+		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		changeColorButton = new JButton("Change Colors!");
 		textField = new JTextField("Call me a name!");
 		changePanelButton = new JButton("Change panel");
+		secondPanel = new GUIPanel2(baseController, this);
 
 		setupPanel();
 		setupLayout();
@@ -71,7 +71,7 @@ public class GUIPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				baseController.changePanel(secondPanel);
 			}
 		});
 	}
