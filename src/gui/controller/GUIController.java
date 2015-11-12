@@ -2,8 +2,6 @@ package gui.controller;
 
 import javax.swing.JPanel;
 import gui.view.GUIFrame;
-import gui.view.GUIPanel;
-import gui.view.GUIPanel2;
 
 public class GUIController
 {
